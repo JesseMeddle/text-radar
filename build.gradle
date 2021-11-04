@@ -1,0 +1,44 @@
+group 'localhost.adifferentperson.frogesp'
+version project.version
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url = 'https://files.minecraftforge.net/maven'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+
+minecraft {
+    version = '1.12.2-14.23.5.2847'
+    mappings = 'stable_39'
+    makeObfSourceJar = false
+
+    replace "#VERSION#", project.version
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+reobf {
+    jar {
+        setMappingType(net.minecraftforge.gradle.user.ReobfMappingType.NOTCH)
+    }
+}
+
