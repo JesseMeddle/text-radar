@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "c.uriah.radar.mixin.mixins",
+  "refmap": "mixins.radar.refmap.json",
+  "mixins": [
+    "MixinGuiMainMenu",
+    "MixinGuiIngameMenu"
+  ]
+}
