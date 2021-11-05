@@ -1,6 +1,7 @@
 package c.uriah.radar;
 
-import c.uriah.radar.mods.Radar;
+import c.uriah.radar.gui.CreateButton;
+import c.uriah.radar.gui.RadarOverlay;
 import c.uriah.radar.proxy.CommonProxy;
 import c.uriah.radar.util.Reference;
 import net.minecraft.client.gui.FontRenderer;
@@ -30,7 +31,8 @@ public class RadarMain {
 	@EventHandler
 	public void init (FMLPreInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(this);
-		MinecraftForge.EVENT_BUS.register(new Radar());
+		MinecraftForge.EVENT_BUS.register(new RadarOverlay());
+		MinecraftForge.EVENT_BUS.register(new CreateButton());
 		System.out.println("[Radar] Initialization completed.");
 	}
 	
